@@ -26,10 +26,24 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BaseModels\BaseAerodynamics.py" />
+    <Compile Include="BaseModels\BaseControl.py" />
+    <Compile Include="BaseModels\BaseEquationsOfMotion.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseModels\BaseFlightComputer.py" />
+    <Compile Include="BaseModels\BaseGuidance.py" />
+    <Compile Include="BaseModels\BaseMass.py" />
+    <Compile Include="BaseModels\BaseMotor.py" />
+    <Compile Include="BaseModels\BaseNavigation.py" />
+    <Compile Include="BaseDynamicModel.py" />
     <Compile Include="DynamicModel.py" />
     <Compile Include="MissileSimplified.py" />
     <Compile Include="PhysicalObject.py" />
     <Compile Include="Types.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseModels\" />
   </ItemGroup>
   <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
   <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
